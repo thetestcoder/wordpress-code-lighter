@@ -25,3 +25,36 @@
  * along with Code Lighter. If not, see https://www.gnu.org/licenses/gpl-2.0.html.
  */
 
+
+if (!function_exists('add_action')) {
+    echo "Hi There! I'm just a plugin, not much i can do when called directly";
+    exit;
+}
+
+//setup
+define('CODE_LIGHTER_PLUGIN_URL', __FILE__);
+
+//includes file
+include('inc/activate.php');
+include('inc/deactivate.php');
+include('inc/enqueue.php');
+
+
+//registering hooks
+register_activation_hook(CODE_LIGHTER_PLUGIN_URL, 'code_lighter_activate');
+register_deactivation_hook(CODE_LIGHTER_PLUGIN_URL, 'code_lighter_deactivate');
+
+
+// action hooks
+add_action('wp_enqueue_scripts', 'code_lighter_enqueue');
+
+//filter hooks
+
+
+//shortcodes
+
+
+//custom functions
+
+
+//class init
