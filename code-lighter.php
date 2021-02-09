@@ -38,6 +38,7 @@ define('CODE_LIGHTER_PLUGIN_URL', __FILE__);
 include('inc/activate.php');
 include('inc/deactivate.php');
 include('inc/enqueue.php');
+include('admin/pages/settings.php');
 
 
 //registering hooks
