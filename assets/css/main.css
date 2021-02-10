@@ -2,3 +2,22 @@
     padding: 20px !important;
     border-radius: 10px 30px !important;
 }
+
+.relative-box {
+    position: relative !important;
+}
+
+.copy-button {
+    position: absolute !important;
+    right: 25px !important;
+    color: white !important;
+    top: 15px !important;
+    display: none;
+    cursor: pointer;
+}
+
+.wp-block-code-lighter-highlighter:hover .copy-button {
+    display: block;
+    border: 1px solid #fff;
+    padding: 1px 20px;
+}

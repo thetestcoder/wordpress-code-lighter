@@ -2,21 +2,15 @@ import './editor.scss';
 
 import languages from "./languages";
 
+
 const {registerBlockType} = wp.blocks;
 const {__} = wp.i18n;
 
 const {
     InspectorControls,
-    InnerBlocks
 } = wp.blockEditor;
 
-const {
-    PanelBody,
-    PanelRow,
-    TextControl,
-    SelectControl,
-    TextareaControl
-} = wp.components;
+const {} = wp.components;
 
 registerBlockType('code-lighter/highlighter', {
         title: __("Highlighter", 'code-lighter'),
@@ -42,14 +36,13 @@ registerBlockType('code-lighter/highlighter', {
             }
         },
         edit: (props) => {
-            const updateLanguage = (event) => {
-                document.querySelectorAll('textarea.code').forEach(block => {
-                    console.log("looking good");
-                    hljs.highlightBlock(block);
-                });
-                props.setAttributes({language: event.target.value})
-            };
+            const updateLanguage = (event) => props.setAttributes({language: event.target.value});
             const updateCode = (event) => props.setAttributes({code: event.target.value});
+            const highlight = editor => {
+                let code = editor.textContent;
+                code = code.replace(/\((\w+?)(\b)/g, '(<font color="#8a2be2">$1</font>$2');
+                editor.innerHTML = code;
+            };
 
             return <div className={'highlighter'}>
                 <div className={'mb-2'}>
@@ -74,7 +67,7 @@ registerBlockType('code-lighter/highlighter', {
                         id="code"
                         cols="30"
                         rows="10"
-                        className={'form-control code ' + props.attributes.language}
+                        className={'form-control editor'}
                     >
                         {props.attributes.code}
                     </textarea>
@@ -84,11 +77,14 @@ registerBlockType('code-lighter/highlighter', {
         save: (props) => {
             return (
                 <div>
-                    <pre>
-                       <code className={props.attributes.language}>
-                           {props.attributes.code}
-                       </code>
-                    </pre>
+                    <div className={'relative-box'}>
+                        <span className={"copy-button"}>Copy</span>
+                        <pre>
+                           <code className={props.attributes.language}>
+                               {props.attributes.code}
+                           </code>
+                        </pre>
+                    </div>
                 </div>
             );
         }
