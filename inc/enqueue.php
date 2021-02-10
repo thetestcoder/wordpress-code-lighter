@@ -5,10 +5,11 @@ if (function_exists('code_lighter_enqueue'))
 
 function code_lighter_enqueue(): void
 {
+    $current_style = get_option('code_lighter_setting')['style'];
     //style
     wp_register_style(
         'code-lighter-highlight-style',
-        plugins_url('/assets/css/highlight/monokai.css', CODE_LIGHTER_PLUGIN_URL),
+        plugins_url('/assets/css/highlight/' . $current_style, CODE_LIGHTER_PLUGIN_URL),
         '',
         '',
         'all'
