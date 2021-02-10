@@ -39,6 +39,7 @@ include('inc/activate.php');
 include('inc/deactivate.php');
 include('inc/enqueue.php');
 include('admin/pages/settings.php');
+include('blocks/enqueue.php');
 
 
 //registering hooks
@@ -48,6 +49,7 @@ register_deactivation_hook(CODE_LIGHTER_PLUGIN_URL, 'code_lighter_deactivate');
 
 // action hooks
 add_action('wp_enqueue_scripts', 'code_lighter_enqueue');
+add_action('init', 'code_lighter_block_block_init');
 
 //filter hooks
 
