@@ -3,8 +3,21 @@
     border-radius: 10px 30px !important;
 }
 
+.wp-block-code-lighter-highlighter {
+    margin-top: 50px !important;
+}
+
 .relative-box {
     position: relative !important;
+}
+
+.lang {
+    position: absolute !important;
+    border-radius: 10px 20px 0 0 !important;
+    padding: 3px 20px 10px 20px !important;
+    top: -32px;
+    font-size: 18px;
+    z-index: -1;
 }
 
 .copy-button {
@@ -14,6 +27,7 @@
     top: 15px !important;
     display: none;
     cursor: pointer;
+    font-size: 16px;
 }
 
 .wp-block-code-lighter-highlighter:hover .copy-button {

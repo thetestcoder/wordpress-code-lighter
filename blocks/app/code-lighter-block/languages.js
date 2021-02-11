@@ -4,22 +4,6 @@ export default [
         value: 'plaintext'
     },
     {
-        name: "1C",
-        value: 'language-1c'
-    },
-    {
-        name: "ABNF",
-        value: 'language-abnf'
-    },
-    {
-        name: "Access logs",
-        value: 'language-accesslog'
-    },
-    {
-        name: "Ada",
-        value: 'language-ada'
-    },
-    {
         name: "Arduino ",
         value: 'language-ino'
     },
@@ -52,14 +36,6 @@ export default [
         value: 'language-coffeescript'
     },
     {
-        name: 'DNS Zone file',
-        value: 'language-dns'
-    },
-    {
-        name: 'DOS',
-        value: 'language-dos'
-    },
-    {
         name: 'Dart',
         value: 'language-dart'
     },
@@ -69,7 +45,7 @@ export default [
     },
     {
         name: 'Django',
-        value: 'language-django'
+        value: 'language-python'
     },
     {
         name: 'Dockerfile',
@@ -80,24 +56,8 @@ export default [
         value: 'language-elixir'
     },
     {
-        name: 'Elm',
-        value: 'language-elm'
-    },
-    {
-        name: 'Excel',
-        value: 'language-excel'
-    },
-    {
         name: 'Go',
         value: 'language-go'
-    },
-    {
-        name: 'Gradle',
-        value: 'language-gradle'
-    },
-    {
-        name: 'Groovy',
-        value: 'language-groovy'
     },
     {
         name: 'HTML',
@@ -106,10 +66,6 @@ export default [
     {
         name: 'HTTP',
         value: 'language-http'
-    },
-    {
-        name: 'Haskell',
-        value: 'language-haskell'
     },
     {
         name: 'JSON',
@@ -124,16 +80,8 @@ export default [
         value: 'language-js'
     },
     {
-        name: 'Julia',
-        value: 'language-julia'
-    },
-    {
         name: 'Kotlin',
         value: 'language-kotlin'
-    },
-    {
-        name: 'LiveScript',
-        value: 'language-livescript'
     },
     {
         name: 'Markdown',
@@ -154,10 +102,6 @@ export default [
     {
         name: 'PowerShell',
         value: 'language-powershell'
-    },
-    {
-        name: 'Prolog',
-        value: 'language-prolog'
     },
     {
         name: 'Python',
@@ -188,10 +132,6 @@ export default [
         value: 'language-swift'
     },
     {
-        name: 'Twig',
-        value: 'language-twig'
-    },
-    {
         name: 'TypeScript',
         value: 'language-ts'
     },
@@ -202,9 +142,5 @@ export default [
     {
         name: 'XML',
         value: 'language-xml'
-    },
-    {
-        name: 'XQuery',
-        value: 'language-xquery'
     },
 ]

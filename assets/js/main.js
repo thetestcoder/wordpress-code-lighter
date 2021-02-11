@@ -19,3 +19,8 @@ document.addEventListener('click', function (e) {
         window.getSelection().removeAllRanges();
     }
 }, false);
+
+document.querySelectorAll('.lang').forEach((lang) => {
+    let classes = ['hljs', 'hljs-built_in'];
+    lang.classList.add(...classes)
+})

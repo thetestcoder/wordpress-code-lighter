@@ -33,16 +33,26 @@ registerBlockType('code-lighter/highlighter', {
             code: {
                 type: 'string',
                 default: ""
+            },
+            langName: {
+                type: "string",
+                default: "Plain Text"
             }
+
         },
         edit: (props) => {
-            const updateLanguage = (event) => props.setAttributes({language: event.target.value});
-            const updateCode = (event) => props.setAttributes({code: event.target.value});
-            const highlight = editor => {
-                let code = editor.textContent;
-                code = code.replace(/\((\w+?)(\b)/g, '(<font color="#8a2be2">$1</font>$2');
-                editor.innerHTML = code;
+            const updateLanguage = (event) => {
+                props.setAttributes({language: event.target.value});
+                updateLangName(event.target);
             };
+            const updateCode = (event) => props.setAttributes({code: event.target.value});
+            const updateLangName = (target) => {
+                props.setAttributes({
+                    langName: target
+                        .options[target.selectedIndex]
+                        .getAttribute('data-name')
+                })
+            }
 
             return <div className={'highlighter'}>
                 <div className={'mb-2'}>
@@ -55,7 +65,7 @@ registerBlockType('code-lighter/highlighter', {
                     >
                         {
                             languages.map((lang, index) => {
-                                return <option key={index} value={lang.value}>{lang.name}</option>
+                                return <option key={index} value={lang.value} data-name={lang.name}>{lang.name}</option>
                             })
                         }
                     </select>
@@ -78,6 +88,7 @@ registerBlockType('code-lighter/highlighter', {
             return (
                 <div>
                     <div className={'relative-box'}>
+                        <span className={"lang"}>{props.attributes.langName}</span>
                         <span className={"copy-button"}>Copy</span>
                         <pre>
                            <code className={props.attributes.language}>
